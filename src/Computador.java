@@ -45,8 +45,6 @@ public class Computador {
 
 
 
-
-
     public int getId() {
         return id;
     }
@@ -65,7 +63,6 @@ public class Computador {
     public Boolean getGpu() {
         return gpu;
     }
-    public String getArquitetura() {
-        return arquitetura;
+    public String getArquitetura() {return arquitetura;
     }
 }

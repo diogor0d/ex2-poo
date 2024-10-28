@@ -21,11 +21,9 @@ public class NCSLab {
         for (int i = 0; i < 5; i++) {
             computadores.add(new RaspberryPi());
         }
-
     }
 
     public ArrayList<Computador> getComputadores() {
         return computadores;
-
     }
 }

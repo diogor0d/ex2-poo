@@ -18,7 +18,8 @@ public class RaspberryPi extends Computador {
     }
 
     public double calcularConsumoEnergetico() {
-        return 20 * getCpu();
+        double energia = 20 * getCpu();
+        energia = Math.round(energia* 10.0) / 10.0;
+        return energia;
     }
-
 }

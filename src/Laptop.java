@@ -28,6 +28,7 @@ public class Laptop extends Computador {
         if(getGpu()){
             energia*=1.2;
         }
+        energia =  Math.round(energia* 10.0) / 10.0;
         return energia;
     }
 }

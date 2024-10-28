@@ -18,7 +18,8 @@ public class Servidor extends Computador {
     }
 
     public double calcularConsumoEnergetico() {
-        return 80 * getCpu();
+        double energia = 80 * getCpu();
+        energia =  Math.round(energia* 10.0) / 10.0;
+        return energia;
     }
-
 }
