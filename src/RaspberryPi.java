@@ -1,6 +1,5 @@
 public class RaspberryPi extends Computador {
     private static final String nivel= "IoT";
-    private static final Boolean gpu = false;
 
 
     private static final int[] possivel_ram = {2, 4, 8};
@@ -12,7 +11,6 @@ public class RaspberryPi extends Computador {
                 Computador.escolherValorAleatorio(possivel_disco),
                 Computador.gerarCpuAleatoria(1.0, 2.0),
                 nivel,
-                gpu,
                 Computador.gerarArquiteturaAleatoria()
         );
     }

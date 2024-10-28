@@ -1,6 +1,5 @@
 public class Servidor extends Computador {
     private static final String nivel= "Cloud";
-    private static final Boolean gpu = false;
 
 
     private static final int[] possivel_ram = {128, 256, 512};
@@ -12,7 +11,6 @@ public class Servidor extends Computador {
                 Computador.escolherValorAleatorio(possivel_disco),
                 Computador.gerarCpuAleatoria(3.0, 4.0),
                 nivel,
-                gpu,
                 Computador.gerarArquiteturaAleatoria()
         );
     }

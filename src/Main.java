@@ -18,8 +18,7 @@ public class Main {
                             ", Disco: " + computador.getDisco() +
                             ", CPU: " + computador.getCpu() +
                             ", Nível: " + computador.getNivel()+
-                            "       (GPU: " + computador.getGpu() +
-                            ", Arquitetura: " + computador.getArquitetura() +")"
+                            ", (Arquitetura: " + computador.getArquitetura() +")"
             );
         }
         System.out.print("\n");

@@ -12,7 +12,7 @@ public class Computador {
     private static int idCounter = 1;
 
     // Construtor
-    public Computador(int ram, int disco, double cpu, String nivel, Boolean gpu, String arquitetura) {
+    public Computador(int ram, int disco, double cpu, String nivel, String arquitetura) {
         this.id = idCounter++;
         this.ram = ram;
         this.disco = disco;
@@ -60,9 +60,7 @@ public class Computador {
     public String getNivel() {
         return nivel;
     }
-    public Boolean getGpu() {
-        return gpu;
-    }
+
     public String getArquitetura() {return arquitetura;
     }
 }

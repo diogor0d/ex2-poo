@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Laptop extends Computador {
     private static final String nivel= "Edge";
-
+    private boolean gpu;
 
     private static final int[] possivel_ram = {16, 32, 64};
     private static final int[] possivel_disco = {256, 512, 1024};
@@ -13,9 +13,9 @@ public class Laptop extends Computador {
                 Computador.escolherValorAleatorio(possivel_disco),
                 Computador.gerarCpuAleatoria(2.0, 3.0),
                 nivel,
-                gerarGpuAleatoria(),
                 Computador.gerarArquiteturaAleatoria()
         );
+        this.gpu= gerarGpuAleatoria();
     }
 
     private static boolean gerarGpuAleatoria() {
@@ -30,5 +30,9 @@ public class Laptop extends Computador {
         }
         energia =  Math.round(energia* 10.0) / 10.0;
         return energia;
+    }
+
+    public Boolean getGpu() {
+        return gpu;
     }
 }
