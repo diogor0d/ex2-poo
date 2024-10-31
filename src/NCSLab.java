@@ -112,7 +112,7 @@ public class NCSLab {
         Random random = new Random();
         return random.nextBoolean();
     }
-    
+
     /**
      * Método que imprime os computadores da infraestrutura ICT do laboratório NCS.
      *
@@ -149,7 +149,7 @@ public class NCSLab {
     public void imprimirConsumoEnergetico() {
         System.out.println("CONSUMOS ENERGÉTICOS DOS COMPUTADORES:");
         for (Computador computador : computadores) {
-            System.out.println(computador);
+            System.out.printf("ID: %d > CONSUMO: %.1f W\n", computador.getId(), computador.calcularConsumoEnergetico());
         }
     }
 
