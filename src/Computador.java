@@ -1,5 +1,3 @@
-import java.util.Random;
-
 /**
  * Esta classe representa um computador que integra o Laboratório NCS.
  * Cada computador é, no geral, caracterizado pelo seu ID único, quantidade de RAM, capacidade de disco, CPU e tipo de arquitetura.
@@ -8,37 +6,32 @@ public class Computador {
     /**
      * Identificador único de cada computador.
      */
-    private int id;
+    private final int id;
 
     /**
      * Quantidade de RAM do computador.
      */
-    private int ram;
+    private final int ram;
 
     /**
      * Capacidade de armazenamento do disco do computador.
      */
-    private int disco;
+    private final int disco;
 
     /**
      * Frequencia de relógio do CPU do computador.
      */
-    private double cpu;
+    private final double cpu;
 
     /**
      * Nível do computador na rede (Cloud, Edge, IOT.
      */
-    private String nivel;
+    private final String nivel;
 
     /**
      * Arquitetura do CPU do computador (x64 ou ARM).
      */
-    private String arquitetura;
-
-    /**
-     * Contador de IDs dos computadores.
-     */
-    private int idCounter = 1;
+    private final String arquitetura;
 
     /**
      * Construtor da classe Computador.

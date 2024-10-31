@@ -8,44 +8,7 @@ public class NCSLab {
     /**
      * Lista de computadores do laboratório NCS.
      */
-    private ArrayList<Computador> computadores;
-
-    /**
-     * Contador de IDs dos computadores.
-     */
-    private int idCounter = 1;
-
-    // Servidor
-    /**
-     * Possíveis valores de RAM para um servidor.
-     */
-    private final int[] rams_servidor = {128, 256, 512};
-    /**
-     * Possíveis valores de disco para um servidor.
-     */
-    private final int[] discos_servidor = {1024, 2048, 4096, 8192};
-
-    // Laptop
-
-    /**
-     * Possíveis valores de RAM para um laptop.
-     */
-    private final int[] rams_laptop = {16, 32, 64};
-    /**
-     * Possíveis valores de disco para um laptop.
-     */
-    private final int[] discos_laptop = {256, 512, 1024};
-
-    // Raspberry Pi
-
-    /**
-     * Possíveis valores de RAM para um RaspberryPi.
-     */
-    private final int[] rams_rpi = {2, 4, 8};
-    /**
-     * Possíveis valores de disco para um RaspberryPi.
-     */
-    private final int[] discos_rpi = {16, 32, 64, 128};
+    private final ArrayList<Computador> computadores;
 
     /**
      * Construtor da classe NCSLab.
@@ -54,18 +17,26 @@ public class NCSLab {
         computadores = new ArrayList<>();
 
         // Adiciona 5 servidores
+        int idCounter = 1;
+
+        int[] ramsServidor = {128, 256, 512};
+        int[] discosServidor = {1024, 2048, 4096, 8192};
         for (int i = 0; i < 5; i++) {
-            computadores.add(new Servidor(idCounter++, escolherValorAleatorio(rams_servidor), escolherValorAleatorio(discos_servidor), gerarCpuAleatoria(3.0, 4.0), gerarArquiteturaAleatoria()));
+            computadores.add(new Servidor(idCounter++, escolherValorAleatorio(ramsServidor), escolherValorAleatorio(discosServidor), gerarCpuAleatoria(3.0, 4.0), gerarArquiteturaAleatoria()));
         }
 
         // Adiciona 5 laptops
+        int[] ramsLaptop = {16, 32, 64};
+        int[] discosLaptop = {256, 512, 1024};
         for (int i = 0; i < 5; i++) {
-            computadores.add(new Laptop(idCounter++, escolherValorAleatorio(rams_laptop), escolherValorAleatorio(discos_laptop), gerarCpuAleatoria(2.0, 3.0), gerarArquiteturaAleatoria(), gerarGpuAleatoria()));
+            computadores.add(new Laptop(idCounter++, escolherValorAleatorio(ramsLaptop), escolherValorAleatorio(discosLaptop), gerarCpuAleatoria(2.0, 3.0), gerarArquiteturaAleatoria(), gerarGpuAleatoria()));
         }
 
         // Adiciona 5 Raspberry Pis
+        int[] ramsRpi = {2, 4, 8};
+        int[] discosRpi = {16, 32, 64, 128};
         for (int i = 0; i < 5; i++) {
-            computadores.add(new RaspberryPi(idCounter++, escolherValorAleatorio(rams_rpi), escolherValorAleatorio(discos_rpi), gerarCpuAleatoria(1.0, 2.0), gerarArquiteturaAleatoria()));
+            computadores.add(new RaspberryPi(idCounter++, escolherValorAleatorio(ramsRpi), escolherValorAleatorio(discosRpi), gerarCpuAleatoria(1.0, 2.0), gerarArquiteturaAleatoria()));
         }
     }
 
@@ -75,7 +46,7 @@ public class NCSLab {
      * @param valores Array de inteiros.
      * @return Valor aleatório dentro do array.
      */
-    public int escolherValorAleatorio(int[] valores) {
+    private int escolherValorAleatorio(int[] valores) {
         Random random = new Random();
         return valores[random.nextInt(valores.length)];
     }
@@ -87,7 +58,7 @@ public class NCSLab {
      * @param max Valor máximo da CPU.
      * @return frequência de relógio aleatória em GHz.
      */
-    public double gerarCpuAleatoria(double min, double max) {
+    private double gerarCpuAleatoria(double min, double max) {
         Random random = new Random();
         double cpu = min + (max - min) * random.nextDouble();
         return Math.round(cpu * 10.0) / 10.0;  // Arredonda para uma casa decimal
@@ -115,8 +86,6 @@ public class NCSLab {
 
     /**
      * Método que imprime os computadores da infraestrutura ICT do laboratório NCS.
-     *
-     * @param computadores Lista de computadores.
      */
     public void imprimirComputadores() {
         System.out.println("COMPUTADORES:");
@@ -128,10 +97,8 @@ public class NCSLab {
 
     /**
      * Método que imprime os computadores com arquitetura x64 da infraestrutura ICT do laboratório NCS.
-     *
-     * @param computadores Lista de computadores com arquitetura x64.
      */
-    public void mostrarComputadoresX64() {
+    public void imprimirComputadoresX64() {
         System.out.println("COMPUTADORES DE ARQUITETURA x64:");
         for (Computador computador : computadores) {
             if ("x64".equals(computador.getArquitetura())) {
@@ -143,8 +110,6 @@ public class NCSLab {
 
     /**
      * Método que imprime o consumo energético (em Watts) dos computadores da infraestrutura ICT do laboratório NCS.
-     *
-     * @param computadores Lista de computadores.
      */
     public void imprimirConsumoEnergetico() {
         System.out.println("CONSUMOS ENERGÉTICOS DOS COMPUTADORES:");

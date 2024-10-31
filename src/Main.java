@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 /**
  * A classe Main é o ponto de entrada do programa que cria uma infraestrutura aleatória e apresenta a lista de computadores, computadores x64 e consumo energético.
  *
@@ -17,7 +15,7 @@ public class Main {
         NCSLab lab = new NCSLab();
         System.out.print("INFRAESTRUTURA ICT DO LABORATÓRIO NCS\n");
         lab.imprimirComputadores();
-        lab.mostrarComputadoresX64();
+        lab.imprimirComputadoresX64();
         lab.imprimirConsumoEnergetico();
     }
 }

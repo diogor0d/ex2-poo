@@ -1,5 +1,3 @@
-import java.util.Random;
-
 /**
  * Esta classe representa um computador portátil que integra o Laboratório NCS.
  */
@@ -7,7 +5,7 @@ public class Laptop extends Computador {
     /**
      * O atributo booleano gpu é um valor exclusivo à subclasse laptop que caracteriza a existência de uma gpu no laptop.
      */
-    private boolean gpu;
+    private final boolean gpu;
 
     /**
      * Construtor da classe Laptop.
