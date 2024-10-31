@@ -49,6 +49,6 @@ public class Laptop extends Computador {
      * @return Representação em string do laptop.
      */
     public String toString() {
-        return "ID: " + getId() + " - RAM: " + getRam() + "GB - Disco: " + getDisco() + "GB - CPU: " + getCpu() + "GHz - Nível: " + getNivel() + " - Arquitetura: " + getArquitetura() + " - GPU: " + getGpu();
+        return "ID: " + getId() + " - RAM: " + getRam() + "GB - Disco: " + getDisco() + "GB - CPU: " + getCpu() + "GHz - Nível: " + getNivel() + " - Arquitetura: " + getArquitetura() + " - GPU: " + (getGpu() ? "Sim" : "Não");
     }
 }
