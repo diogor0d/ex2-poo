@@ -79,6 +79,7 @@ public class NCSLab {
         Random random = new Random();
         return valores[random.nextInt(valores.length)];
     }
+
     /**
      * Método que gera uma frequência de relógio aleatória dentro de um intervalo.
      *
@@ -91,6 +92,7 @@ public class NCSLab {
         double cpu = min + (max - min) * random.nextDouble();
         return Math.round(cpu * 10.0) / 10.0;  // Arredonda para uma casa decimal
     }
+
     /**
      * Método que gera uma arquitetura aleatória (x64 ou ARM).
      *
@@ -100,6 +102,7 @@ public class NCSLab {
         Random random = new Random();
         return random.nextBoolean() ? "x64" : "ARM";
     }
+
     /**
      * Método que gera um valor booleano aleatório para a existência de uma gpu no laptop.
      *
@@ -109,8 +112,7 @@ public class NCSLab {
         Random random = new Random();
         return random.nextBoolean();
     }
-
-
+    
     /**
      * Método que imprime os computadores da infraestrutura ICT do laboratório NCS.
      *
