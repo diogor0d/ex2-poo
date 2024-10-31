@@ -35,8 +35,10 @@ public class Computador {
      */
     private String arquitetura;
 
-    // Contador de ids a atribuir aos computadores
-    private static int idCounter = 1;
+    /**
+     * Contador de IDs dos computadores.
+     */
+    private int idCounter = 1;
 
     /**
      * Construtor da classe Computador.
@@ -47,48 +49,13 @@ public class Computador {
      * @param nivel       Nível do computador na rede (Cloud, Edge, IOT).
      * @param arquitetura Arquitetura do CPU do computador (x64 ou ARM).
      */
-    public Computador(int ram, int disco, double cpu, String nivel, String arquitetura) {
-        this.id = idCounter++;
+    public Computador(int id, int ram, int disco, double cpu, String nivel, String arquitetura) {
+        this.id = id;
         this.ram = ram;
         this.disco = disco;
         this.cpu = cpu;
         this.nivel = nivel;
         this.arquitetura = arquitetura;
-    }
-
-    /**
-     * Método que escolhe um valor aleatório de um array de inteiros.
-     *
-     * @param valores Array de inteiros.
-     * @return Valor aleatório do array.
-     */
-    public static int escolherValorAleatorio(int[] valores) {
-        Random random = new Random();
-        return valores[random.nextInt(valores.length)];
-    }
-
-    /**
-     * Método que gera uma frequência de relógio aleatória dentro de um intervalo.
-     *
-     * @param min Valor mínimo da CPU.
-     * @param max Valor máximo da CPU.
-     * @return frequência de relógio aleatória em GHz.
-     */
-    public static double gerarCpuAleatoria(double min, double max) {
-        Random random = new Random();
-        double cpu = min + (max - min) * random.nextDouble();
-        return Math.round(cpu * 10.0) / 10.0;  // Arredonda para uma casa decimal
-    }
-
-
-    /**
-     * Método que gera uma arquitetura aleatória (x64 ou ARM).
-     *
-     * @return Arquitetura aleatória.
-     */
-    public static String gerarArquiteturaAleatoria() {
-        Random random = new Random();
-        return random.nextBoolean() ? "x64" : "ARM";
     }
 
     /**
@@ -153,5 +120,19 @@ public class Computador {
      */
     public String getArquitetura() {
         return arquitetura;
+    }
+
+    /**
+     * Método que devolve uma representação textual do computador (genérico).
+     *
+     * @return Representação em string do computador.
+     */
+    public String toString() {
+        return "ID: " + getId() +
+                ", RAM: " + getRam() +
+                "GB, Disco: " + getDisco() +
+                "GB, CPU: " + getCpu() +
+                "GHz, Nível: " + getNivel() +
+                ", Arquitetura: " + getArquitetura();
     }
 }
