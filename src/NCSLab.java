@@ -1,9 +1,17 @@
 import java.util.ArrayList;
-import java.util.Collections;
 
+/**
+ * Esta classe representa o laboratório NCS que contém uma lista de computadores.
+ */
 public class NCSLab {
+    /**
+     * Lista de computadores do laboratório NCS.
+     */
     private ArrayList<Computador> computadores;
 
+    /**
+     * Construtor da classe NCSLab.
+     */
     public NCSLab() {
         computadores = new ArrayList<>();
 
@@ -23,6 +31,10 @@ public class NCSLab {
         }
     }
 
+    /**
+     * Método que retorna a lista de computadores do laboratório NCS.
+     * @return Lista de computadores.
+     */
     public ArrayList<Computador> getComputadores() {
         return computadores;
     }
