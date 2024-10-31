@@ -40,10 +40,11 @@ public class Computador {
 
     /**
      * Construtor da classe Computador.
-     * @param ram Quantidade de RAM do computador.
-     * @param disco Capacidade de armazenamento do disco do computador.
-     * @param cpu Frequencia de relógio do CPU do computador.
-     * @param nivel Nível do computador na rede (Cloud, Edge, IOT).
+     *
+     * @param ram         Quantidade de RAM do computador.
+     * @param disco       Capacidade de armazenamento do disco do computador.
+     * @param cpu         Frequencia de relógio do CPU do computador.
+     * @param nivel       Nível do computador na rede (Cloud, Edge, IOT).
      * @param arquitetura Arquitetura do CPU do computador (x64 ou ARM).
      */
     public Computador(int ram, int disco, double cpu, String nivel, String arquitetura) {
@@ -57,6 +58,7 @@ public class Computador {
 
     /**
      * Método que escolhe um valor aleatório de um array de inteiros.
+     *
      * @param valores Array de inteiros.
      * @return Valor aleatório do array.
      */
@@ -67,6 +69,7 @@ public class Computador {
 
     /**
      * Método que gera uma frequência de relógio aleatória dentro de um intervalo.
+     *
      * @param min Valor mínimo da CPU.
      * @param max Valor máximo da CPU.
      * @return frequência de relógio aleatória em GHz.
@@ -80,6 +83,7 @@ public class Computador {
 
     /**
      * Método que gera uma arquitetura aleatória (x64 ou ARM).
+     *
      * @return Arquitetura aleatória.
      */
     public static String gerarArquiteturaAleatoria() {
@@ -89,6 +93,7 @@ public class Computador {
 
     /**
      * Método que calcula o consumo energético do computador.
+     *
      * @return Consumo energético do computador em Watts.
      */
     public double calcularConsumoEnergetico() {
@@ -98,6 +103,7 @@ public class Computador {
 
     /**
      * Método que devolve o ID do computador.
+     *
      * @return ID do computador.
      */
     public int getId() {
@@ -106,6 +112,7 @@ public class Computador {
 
     /**
      * Método que devolve a quantidade de RAM do computador.
+     *
      * @return Quantidade de RAM do computador em GB.
      */
     public int getRam() {
@@ -114,6 +121,7 @@ public class Computador {
 
     /**
      * Método que devolve a capacidade de armazenamento do disco do computador.
+     *
      * @return Capacidade de armazenamento do disco do computador em GB.
      */
     public int getDisco() {
@@ -122,6 +130,7 @@ public class Computador {
 
     /**
      * Método que devolve a frequência de relógio do CPU do computador.
+     *
      * @return Frequência de relógio do CPU do computador em GHz.
      */
     public double getCpu() {
@@ -130,6 +139,7 @@ public class Computador {
 
     /**
      * Método que devolve o nível do computador na rede.
+     *
      * @return Nível do computador na rede.
      */
     public String getNivel() {
@@ -138,8 +148,10 @@ public class Computador {
 
     /**
      * Método que devolve a arquitetura do CPU do computador.
+     *
      * @return Arquitetura do CPU do computador.
      */
-    public String getArquitetura() {return arquitetura;
+    public String getArquitetura() {
+        return arquitetura;
     }
 }

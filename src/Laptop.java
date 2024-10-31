@@ -7,7 +7,7 @@ public class Laptop extends Computador {
     /**
      * Nível do computador "Laptop" na rede (Cloud, Edge, IOT.
      */
-    private static final String nivel= "Edge";
+    private static final String nivel = "Edge";
 
     /**
      * O atributo booleano gpu é um valor exclusivo à subclasse laptop que caracteriza a existência de uma gpu no laptop.
@@ -35,11 +35,12 @@ public class Laptop extends Computador {
                 nivel,
                 Computador.gerarArquiteturaAleatoria()
         );
-        this.gpu= gerarGpuAleatoria();
+        this.gpu = gerarGpuAleatoria();
     }
 
     /**
      * Método que gera um valor booleano aleatório para a existência de uma gpu no laptop.
+     *
      * @return Valor booleano aleatório.
      */
     private static boolean gerarGpuAleatoria() {
@@ -49,19 +50,21 @@ public class Laptop extends Computador {
 
     /**
      * Método que calcula o consumo energético de um laptop.
+     *
      * @return Consumo energético do laptop.
      */
     public double calcularConsumoEnergetico() {
         double energia = 50 * getCpu();
-        if(getGpu()){
-            energia*=1.2;
+        if (getGpu()) {
+            energia *= 1.2;
         }
-        energia =  Math.round(energia* 10.0) / 10.0;
+        energia = Math.round(energia * 10.0) / 10.0;
         return energia;
     }
 
     /**
      * Método que retorna o valor do atributo gpu.
+     *
      * @return Valor do atributo gpu.
      */
     public Boolean getGpu() {

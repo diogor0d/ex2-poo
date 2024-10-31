@@ -33,6 +33,7 @@ public class NCSLab {
 
     /**
      * Método que retorna a lista de computadores do laboratório NCS.
+     *
      * @return Lista de computadores.
      */
     public ArrayList<Computador> getComputadores() {

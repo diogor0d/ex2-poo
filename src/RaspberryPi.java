@@ -2,7 +2,7 @@ public class RaspberryPi extends Computador {
     /**
      * Nível do computador RespberryPi na rede (Cloud, Edge, IOT.
      */
-    private static final String nivel= "IoT";
+    private static final String nivel = "IoT";
 
     /**
      * Possíveis valores de RAM para um RaspberryPi.
@@ -29,11 +29,12 @@ public class RaspberryPi extends Computador {
 
     /**
      * Método que calcula o consumo energético de um RaspberryPi.
+     *
      * @return Consumo energético do RaspberryPi.
      */
     public double calcularConsumoEnergetico() {
         double energia = 20 * getCpu();
-        energia = Math.round(energia* 10.0) / 10.0;
+        energia = Math.round(energia * 10.0) / 10.0;
         return energia;
     }
 }

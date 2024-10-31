@@ -6,7 +6,7 @@ public class Servidor extends Computador {
     /**
      * Nível do computador "Servidor" na rede (Cloud, Edge, IOT.
      */
-    private static final String nivel= "Cloud";
+    private static final String nivel = "Cloud";
 
     /**
      * Possíveis valores de RAM para um servidor.
@@ -33,11 +33,12 @@ public class Servidor extends Computador {
 
     /**
      * Método que calcula o consumo energético de um servidor.
+     *
      * @return Consumo energético do servidor.
      */
     public double calcularConsumoEnergetico() {
         double energia = 80 * getCpu();
-        energia =  Math.round(energia* 10.0) / 10.0;
+        energia = Math.round(energia * 10.0) / 10.0;
         return energia;
     }
 }
