@@ -8,7 +8,13 @@ public class Laptop extends Computador {
     private final boolean gpu;
 
     /**
-     * Construtor da classe Laptop.
+     * Construtor da classe Laptop, recebe dados para inicialização.
+     * @param id Identificador único do laptop.
+     * @param ram Quantidade de RAM do laptop.
+     * @param disco Capacidade de armazenamento do disco do laptop.
+     * @param cpu Frequência de relógio do CPU do laptop.
+     * @param arquitetura Arquitetura do CPU do laptop (x64 ou ARM).
+     * @param gpu Existência de uma GPU no laptop.
      */
     public Laptop(int id, int ram, int disco, double cpu, String arquitetura, boolean gpu) {
         super(id, ram, disco, cpu, "Edge", arquitetura);
@@ -18,7 +24,7 @@ public class Laptop extends Computador {
     /**
      * Método que calcula o consumo energético de um laptop.
      *
-     * @return Consumo energético do laptop.
+     * @return Consumo energético do laptop arredondado a uma casa decimal.
      */
     @Override
     public double calcularConsumoEnergetico() {

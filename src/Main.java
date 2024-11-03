@@ -12,7 +12,7 @@ public class Main {
      * @param args Argumentos da linha de comandos.
      */
     public static void main(String[] args) {
-        NCSLab lab = new NCSLab();
+        NCSLab lab = new NCSLab(5,5,5);
         System.out.print("INFRAESTRUTURA ICT DO LABORATÓRIO NCS\n");
         lab.imprimirComputadores();
         lab.imprimirComputadoresX64();

@@ -34,7 +34,7 @@ public class Computador {
     private final String arquitetura;
 
     /**
-     * Construtor da classe Computador.
+     * Construtor da classe Computador, recebe informação para inicialização.
      *
      * @param ram         Quantidade de RAM do computador.
      * @param disco       Capacidade de armazenamento do disco do computador.
