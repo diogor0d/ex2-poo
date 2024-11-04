@@ -21,6 +21,7 @@ public class NCSLab {
         computadores = new ArrayList<>();
 
         String[] arquiteturasDisponiveis = {"x64", "ARM"};
+        boolean[] gpusDisponiveis = {true, false};
 
         // Adiciona servidores
         int idCounter = 1;
@@ -35,14 +36,14 @@ public class NCSLab {
         int[] ramsLaptop = {16, 32, 64};
         int[] discosLaptop = {256, 512, 1024};
         for (int i = 0; i < numLaptops; i++) {
-            computadores.add(new Laptop(idCounter++, escolherElementoAleatorio(ramsLaptop), escolherElementoAleatorio(discosLaptop), gerarCpuClockAleatorio(2.0, 3.0), gerarArquiteturaAleatoria(), gerarGpuAleatoria()));
+            computadores.add(new Laptop(idCounter++, escolherElementoAleatorio(ramsLaptop), escolherElementoAleatorio(discosLaptop), gerarCpuClockAleatorio(2.0, 3.0), escolherElementoAleatorio(arquiteturasDisponiveis), escolherElementoAleatorio(gpusDisponiveis)));
         }
 
         // Adiciona Raspberry Pis
         int[] ramsRpi = {2, 4, 8};
         int[] discosRpi = {16, 32, 64, 128};
         for (int i = 0; i < numRaspberryPis; i++) {
-            computadores.add(new RaspberryPi(idCounter++, escolherElementoAleatorio(ramsRpi), escolherElementoAleatorio(discosRpi), gerarCpuClockAleatorio(1.0, 2.0), gerarArquiteturaAleatoria()));
+            computadores.add(new RaspberryPi(idCounter++, escolherElementoAleatorio(ramsRpi), escolherElementoAleatorio(discosRpi), gerarCpuClockAleatorio(1.0, 2.0), escolherElementoAleatorio(arquiteturasDisponiveis)));
         }
     }
 
@@ -69,36 +70,27 @@ public class NCSLab {
     }
 
     /**
+     * Método que escolhe um elemento aleatório dentro de um array de booleans.
+     *
+     * @param valores Array de booleans.
+     * @return boolean aleatório dentro do array.
+     */
+    private boolean escolherElementoAleatorio(boolean[] valores) {
+        Random random = new Random();
+        return valores[random.nextInt(valores.length)];
+    }
+
+    /**
      * Método que gera uma frequência de relógio aleatória dentro de um intervalo.
      *
-     * @param min Valor mínimo da CPU.
-     * @param max Valor máximo da CPU.
+     * @param min Valor mínimo do clock do CPU.
+     * @param max Valor máximo do clock do CPU.
      * @return frequência de relógio aleatória em GHz arredondada à primeira casa.
      */
     private double gerarCpuClockAleatorio(double min, double max) {
         Random random = new Random();
         double cpu = min + (max - min) * random.nextDouble();
         return Math.round(cpu * 10.0) / 10.0;  // Arredonda para uma casa decimal
-    }
-
-    /**
-     * Método que gera uma arquitetura aleatória (x64 ou ARM).
-     *
-     * @return Arquitetura aleatória.
-     */
-    public String gerarArquiteturaAleatoria() {
-        Random random = new Random();
-        return random.nextBoolean() ? "x64" : "ARM";
-    }
-
-    /**
-     * Método que gera um valor booleano aleatório para a existência de uma gpu no laptop.
-     *
-     * @return Valor booleano aleatório.
-     */
-    private boolean gerarGpuAleatoria() {
-        Random random = new Random();
-        return random.nextBoolean();
     }
 
     /**
