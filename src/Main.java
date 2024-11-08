@@ -1,8 +1,8 @@
 /**
  * A classe Main é o ponto de entrada do programa que cria uma infraestrutura aleatória e apresenta a lista de computadores, computadores x64 e consumo energético.
  *
- * @author Diogo Rodrigues 2022257625
- * @author João Cruz 2022258375
+ * @author Diogo Rodrigues
+ * @author João Cruz
  * @version 1.0
  */
 public class Main {
